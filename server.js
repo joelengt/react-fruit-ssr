@@ -10,15 +10,45 @@ const port = process.env.PORT || 5000
 app.prepare()
   .then(() => {
     const server = express()
-
-    server.get('/fruit/:id', (req, res) => {
+    // SSR fruits
+    server.get('/fruit-item/:id', (req, res) => {
       let params = req.params
       let query = req.query
 
       console.log('params', params)
       console.log('query', query)
 
-      return app.render(req, res, '/fruit-item', Object.assign(params, query))
+      return app.render(req, res, '/fruit-item', params)
+    })
+
+    server.get('/about-sample', (req, res) => {
+      let params = req.params
+      let query = req.query
+
+      console.log('params', params)
+      console.log('query', query)
+
+      return app.render(req, res, '/about', Object.assign(params, query))
+    })
+
+    server.get('/contactos-sample', (req, res) => {
+      let params = req.params
+      let query = req.query
+
+      console.log('params', params)
+      console.log('query', query)
+
+      return app.render(req, res, '/contactos', Object.assign(params, query))
+    })
+
+    server.get('/home', (req, res) => {
+      let params = req.params
+      let query = req.query
+
+      console.log('params', params)
+      console.log('query', query)
+
+      return app.render(req, res, '/', Object.assign(params, query))
     })
 
     server.get('*', (req, res) => {

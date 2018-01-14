@@ -34,7 +34,7 @@ class Fruit extends React.Component {
         <img src={ this.props.image }></img>
         <div className="button">
           <p>
-            <Link href={ this.getFruit() }>info</Link>
+            <a href={ this.getFruit() }>info</a>
           </p>
         </div>
         <div onClick={ this.handleStateClick }>

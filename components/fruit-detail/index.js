@@ -5,6 +5,8 @@ class FruitDetail extends React.Component {
   constructor(props) {
     super(props)
     this.id = this.props.id
+
+    console.log('ID QUE LLEGA', this.props.id)
   }
 
   getFruit(id) {
@@ -45,7 +47,7 @@ class FruitDetail extends React.Component {
 
 
     return (
-      <article className="fruit-item" key={this.id}>
+      <article className="fruit-item" key={this.props.id}>
         <style dangerouslySetInnerHTML={{__html: stylesheet}}/>
         <h2>{ element.name }</h2>
         <p>{ element.color }</p>
@@ -55,9 +57,10 @@ class FruitDetail extends React.Component {
   }
 
   render() {
+    console.log('Render?', this.props.id)
     return (
       <div>
-        { this.getFruit(this.id) }
+        { this.getFruit(this.props.id) }
       </div>
     )
   }

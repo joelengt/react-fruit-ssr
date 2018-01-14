@@ -7,13 +7,19 @@ const Header = () => (
     <style dangerouslySetInnerHTML={{__html: stylesheet}}/>
     <ul>
       <li>
-        <Link href="/" prefetch>Inicio</Link>
+        <Link href={ "/fruit-item?id=1" } as={ "/fruit-item/1" }>
+          <a>fruta 1</a>
+        </Link>
       </li>
       <li>
-        <Link href="/about" prefetch>About Us</Link>
+        <Link href={ "/fruit-item?id=2" } as={ "/fruit-item/2" }>
+          <a>fruta 2</a>
+        </Link>
       </li>
       <li>
-        <Link href="/contactos" prefetch>Contact Us</Link>
+        <Link href={ "/fruit-item?id=3" } as={ "/fruit-item/3" }>
+          <a>fruta 3</a>
+        </Link>
       </li>
     </ul>
   </nav>
