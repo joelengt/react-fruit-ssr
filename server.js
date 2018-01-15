@@ -19,6 +19,8 @@ app.prepare()
       console.log('query', query)
 
       return app.render(req, res, '/fruit-item', params)
+
+      // return renderComponent(req, './components/Layout')
     })
 
     server.get('/about-sample', (req, res) => {
@@ -48,6 +50,8 @@ app.prepare()
       console.log('params', params)
       console.log('query', query)
 
+      // const mergedQuery = Object.assign({}, req.query, req.params);
+      // return app.render(req, res, '/blog', mergedQuery);
       return app.render(req, res, '/', Object.assign(params, query))
     })
 

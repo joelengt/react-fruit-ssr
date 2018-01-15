@@ -1,6 +1,27 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import FruitDetail from '../components/fruit-detail'
+import dynamic from 'next/dynamic'
+import FruitList from '../components/fruits'
+
+class Humans extends React.Component {
+  render() {
+    return(
+      <div>
+        humans
+      </div>
+    )
+  }
+}
+
+class FruitItem extends React.Component {
+  render() {
+    return(
+      <div>
+        FruitItem
+      </div>
+    )
+  }
+}
 
 class Fruiit extends React.Component {
   constructor(props) {
@@ -19,9 +40,9 @@ class Fruiit extends React.Component {
     return (
       <Layout title="Fruit Details">
         <div>
-          <h2>Fruit Detail</h2>
-          <FruitDetail id={ this.props.url.query.id }/>
+          <h2>Fruit Detail!</h2>
         </div>
+        <FruitList/>
       </Layout>
     )
   }
