@@ -9,6 +9,7 @@ class Fruiit extends React.Component {
   }
 
   static getInitialProps ({ query: { id } }) {
+    console.log('query data ===>', query)
     console.log('Current id', id)
     return { id }
   }
